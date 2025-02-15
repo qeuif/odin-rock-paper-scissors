@@ -12,3 +12,20 @@ function getComputerChoice() {
     }
 }
 // console.log(getComputerChoice());
+
+function getHumanChoice(){
+    let choice = prompt("Choose rock, paper or scissors: ");
+    choice = choice.toLowerCase();
+    // console.log(choice);
+    if (choice === "rock") {
+        return "rock";
+    } else if (choice === "paper") {
+        return "paper";
+    } else if (choice === "scissors") {
+        return "scissors";
+    } else {
+        alert("Invalid Input\nPlease refresh page.");
+    }
+}
+
+getHumanChoice()
