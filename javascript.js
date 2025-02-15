@@ -44,6 +44,14 @@ function playGame() {
         console.log(`Computer score: ${computerScore}`);
     }
 
+    if (humanScore > computerScore) {
+        console.log(`You won overall! (${humanScore}-${computerScore})`);
+    } else if (humanScore < computerScore) {
+        console.log(`Computer won overall! (${computerScore}-${humanScore})`);
+    } else {
+        console.log(`It/'s a tie overall! (${humanScore}-${computerScore})`);
+    }
+
     function playRound(humanChoice, computerChoice) {
         // console.log(humanChoice);
         // console.log(computerChoice);
