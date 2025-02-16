@@ -36,10 +36,7 @@ function playGame() {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
         console.log(`Round ${i+1}`);
-        let res = playRound(humanSelection, computerSelection);
-        if (res === null) {
-            continue;
-        }
+        playRound(humanSelection, computerSelection);
         console.log(`Your score: ${humanScore}`);
         console.log(`Computer score: ${computerScore}`);
     }
@@ -99,7 +96,6 @@ function playGame() {
             }
         } else { // Invalid Input
             console.log("Invalid Input");
-            return null;
         }
     }
 }
