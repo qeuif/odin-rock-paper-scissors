@@ -30,9 +30,8 @@ function playGame() {
 
     let chosen = document.querySelector("#choices");
     chosen.addEventListener("click", (event) => {
-        let target = event.target;
-        console.log(target.disabled);
-        if (roundNumber <= maxRound && !target.disabled) {
+        let target = event.target.closest("button");
+        if (target && roundNumber <= maxRound && !target.disabled) {
             switch (target.id) {
                 case "rock":
                     humanChoice = "rock";
@@ -46,7 +45,6 @@ function playGame() {
             }
         }
         playRound(humanChoice, getComputerChoice());
-        console.log(`${humanScore}, ${computerScore}`);
         updateScores();
 
         if (roundNumber >= maxRound) {
@@ -113,13 +111,10 @@ function playGame() {
 
     function displayFinalScore() {
         if (humanScore > computerScore) {
-            console.log(`You won overall! (${humanScore}-${computerScore})`);
             printFinalScore.textContent = "You won overall!";
         } else if (humanScore < computerScore) {
-            console.log(`Computer won overall! (${computerScore}-${humanScore})`);
             printFinalScore.textContent = "Computer won overall!";
         } else {
-            console.log(`It/'s a tie overall! (${humanScore}-${computerScore})`);
             printFinalScore.textContent = "It\'s a tie overall!";
         }
     }
