@@ -8,3 +8,5 @@ This project is a practice exercise focused on building an interactive Rock Pape
 - Using conditionals to determine game outcomes
 - Displaying results dynamically in the console
 - Implementing loops for repeated gameplay
+
+View site [here](https://qeuif.github.io/odin-rock-paper-scissors/)
