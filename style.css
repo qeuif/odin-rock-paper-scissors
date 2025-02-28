@@ -7,17 +7,38 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: Anton, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: navy;
+    color: bisque;
+    gap: 10px;
 }
 
 .heading {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 50px;
 }
 
 .against,
 .bestOf{
     font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 45px;
+}
+
+.roundNumber {
+    margin-top: 30px;
+    font-size: 50px;
+}
+
+#choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.vs,
+.computerChoice {
+    font-size: 40px;
 }
 
 #scores {
@@ -32,7 +53,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 150px;
+    width: 300px;
+    font-size: 30px;
+    border: 2px solid white;
 }
 
 .questionMark {
@@ -40,8 +63,16 @@ body {
     border: 2px solid black;
 }
 
+.result,
+.finalScore {
+    font-size: 30px;
+}
+
 .footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: lightblue;
+    width: 100%;
+    color: black;
 }

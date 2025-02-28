@@ -24,6 +24,7 @@ function playGame() {
     let printComputerScore = document.querySelector(".computerScore");
     let choiceButtons = document.querySelectorAll("#choices button");
     let printComputerChoice = document.querySelector(".computerChoice");
+    let computerChoiceImg = document.getElementById("computerImage");
 
     let printRoundNumber = document.querySelector(".roundNumber");
     printRoundNumber.textContent = `Round ${roundNumber}`;
@@ -62,13 +63,16 @@ function playGame() {
         if (humanChoice === "rock") {
             switch (computerChoice) {
                 case "rock":
+                    computerChoiceImg.src= "./images/rock.png";
                     printResult.textContent = "It\'s a tie! Both played Rock";
                     break;
                 case "paper":
+                    computerChoiceImg.src= "./images/paper.png";
                     printResult.textContent = "You lose! Paper beats Rock";
                     computerScore += 1;
                     break;
                 case "scissors":
+                    computerChoiceImg.src= "./images/scissors.png";
                     printResult.textContent = "You win! Rock beats Scissors";
                     humanScore += 1;
                     break;
@@ -76,13 +80,16 @@ function playGame() {
         } else if (humanChoice === "paper") {
             switch (computerChoice) {
                 case "paper":
+                    computerChoiceImg.src= "./images/paper.png";
                     printResult.textContent = "It\'s a tie! Both played Paper";
                     break;
                 case "scissors":
+                    computerChoiceImg.src= "./images/scissors.png";
                     printResult.textContent = "You lose! Scissors beats Paper";
                     computerScore += 1;
                     break;
                 case "rock":
+                    computerChoiceImg.src= "./images/rock.png";
                     printResult.textContent = "You win! Paper beats Rock";
                     humanScore += 1;
                     break;
@@ -90,13 +97,16 @@ function playGame() {
         } else if (humanChoice === "scissors") {
             switch (computerChoice) {
                 case "scissors":
+                    computerChoiceImg.src= "./images/scissors.png";
                     printResult.textContent = "It\'s a tie! Both played Scissors";
                     break;
                 case "rock":
+                    computerChoiceImg.src= "./images/rock.png";
                     printResult.textContent = "You lose! Rock beats Scissors"
                     computerScore += 1;
                     break;
                 case "paper":
+                    computerChoiceImg.src= "./images/paper.png";
                     printResult.textContent = "You win! Scissors beats Paper";
                     humanScore += 1;
                     break;
@@ -120,10 +130,12 @@ function playGame() {
     }
 
     function displayPlayAgainButton() {
-        const body = document.querySelector("body");
+        const footer = document.querySelector(".footer");
         const resetButton = document.createElement("button");
         resetButton.textContent = "Play again";
-        body.appendChild(resetButton);
+        resetButton.style.fontSize = "30px";
+        resetButton.style.fontFamily = "Roboto, 'Open Sans', 'Helvetica Neue', sans-serif";
+        footer.parentNode.insertBefore(resetButton, footer);
 
         resetButton.addEventListener("click", () => {
             resetButton.remove();
@@ -155,6 +167,7 @@ function playGame() {
         printHumanScore.textContent = humanScore;
         printComputerScore.textContent = computerScore;
         printComputerChoice.textContent = "Computer Choice";
+        computerChoiceImg.src= "./images/question.png";
     }
 }
 
